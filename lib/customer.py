@@ -1,9 +1,10 @@
 
 from .order import Order
-from .coffee import Coffee
+# from .coffee import Coffee
 
 
 class Customer:
+    
     all =[]
 
     def __init__(self,name):
@@ -17,25 +18,29 @@ class Customer:
 
     # sets the name  
     @name.setter
-    def name(self,name):
+    def name(self,value):
         # checks if name is a string and between 1 to 15 xters
-        if not isinstance(name,str):
+        if not isinstance(value,str):
             raise Exception('name must be a string ')
-        if not 1<=len(name)<=15:
+        if not 1<=len(value)<=15:
             raise Exception("Name must be between 1-15 charachters")
-        self._name= name
+        self._name= value
 
     def orders(self):
-        return([order for order in Order.all if order.customer==self])  
+        return([order for order in Order.all if order.customer==self]) 
+     
     def coffees(self):
         # returns a set so duplicates then a list 
         return list({order.coffee for order in self.orders()})
+    
     def create_order(self,coffee,price):
+        from .order import Order
         return Order(self,coffee,price)
 
-# creating instances    
-customer=Customer('Isaac')
-coffee= Coffee('cappuccino')
+if __name__ == "__main__":
+    from .coffee import Coffee  
+    customer = Customer('Isaac')
+    coffee = Coffee('cappuccino')
+    customer.create_order(coffee, 4.50)
+    print(customer.orders())
 
-customer.create_order(coffee,4.50)
-# print(customer.orders())
