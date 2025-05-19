@@ -46,7 +46,7 @@ Validation Rules:
 Clone the repository:
 
 bash
-git clone https://github.com/your-bakarijuma1/coffee-shop-challenge.git
+git clone https://github.com/BakariJuma1/cofffee-shop-code-challenge
 cd coffee-shop-challenge
 Set up environment:
 
