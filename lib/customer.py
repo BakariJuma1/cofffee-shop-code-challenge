@@ -1,3 +1,8 @@
+
+from .order import Order
+from .coffee import Coffee
+
+
 class Customer:
     all =[]
 
@@ -21,4 +26,16 @@ class Customer:
         self._name= name
 
     def orders(self):
-        pass    
+        return([order for order in Order.all if order.customer==self])  
+    def coffees(self):
+        # returns a set so duplicates then a list 
+        return list({order.coffee for order in self.orders()})
+    def create_order(self,coffee,price):
+        return Order(self,coffee,price)
+
+# creating instances    
+customer=Customer('Isaac')
+coffee= Coffee('cappuccino')
+
+customer.create_order(coffee,4.50)
+# print(customer.orders())
