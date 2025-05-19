@@ -34,3 +34,11 @@ for order in customer1.orders():
     print(f"Customer:{order.customer.name},coffee:{order.coffee.name},price:${order.price:.2f}")      
 for order in customer3.orders():
     print(f"Customer:{order.customer.name},coffee:{order.coffee.name},price:${order.price:.2f}")      
+
+print('-----------------------------------------------------------------------------------------------')
+
+aficionado = Customer.most_aficionado(coffee3)
+if aficionado:
+    print(f"\nMost aficionado of {coffee1.name} is {aficionado.name}")
+else:
+    print(f"\nNo aficionado found for {coffee1.name}")
