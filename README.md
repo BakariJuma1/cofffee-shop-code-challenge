@@ -45,19 +45,20 @@ Validation Rules:
 🚀 Getting Started
 Clone the repository:
 
-bash
 git clone https://github.com/BakariJuma1/cofffee-shop-code-challenge
 cd coffee-shop-challenge
 Set up environment:
 
-bash
+
 pipenv install
 pipenv shell
 Run tests:
 
-bash
+
 python -m pytest tests/
 Experiment in debug console:
 
-bash
+
 python debug.py
+
+use debug.py to test
