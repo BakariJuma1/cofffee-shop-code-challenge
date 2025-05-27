@@ -17,9 +17,9 @@ class Customer:
     def name(self,value):
         # checks if name is a string and between 1 to 15 xters
         if not isinstance(value,str):
-            raise Exception('name must be a string ')
+            raise ValueError('Name must be a string.')
         if not 1<=len(value)<=15:
-            raise Exception("Name must be between 1-15 charachters")
+            raise ValueError("Name must be between 1 and 15 characters.")
         self._name= value
 
     def orders(self):
@@ -47,7 +47,7 @@ class Customer:
         return max(customer_spending,key=customer_spending.get)    
 
 if __name__ == "__main__":
-    from .coffee import Coffee  
+    from coffee import Coffee  
     customer = Customer('Isaac')
     coffee = Coffee('cappuccino')
     customer.create_order(coffee, 4.50)

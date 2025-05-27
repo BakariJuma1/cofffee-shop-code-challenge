@@ -19,11 +19,11 @@ class Order:
     @price.setter
     def price(self,value):
         if not isinstance(value,float):
-            raise Exception("price must be a float ")
+            raise ValueError("Please enter a valid price.")
         if not 1.0<= value <= 10:
-            raise Exception("price should be between 1.0 to 10")
+            raise ValueError("Please enter a valid price.")
         if  hasattr(self,'_price'):
-            raise Exception('price can not be changed after creation ')
+            raise ValueError('Price is already set and cannot be changed.')
         self._price = value
     
     @property
@@ -34,7 +34,7 @@ class Order:
     def customer(self,value):
         from customer import Customer
         if not isinstance(value,Customer):
-            raise Exception("Must be a coffee instance")
+            raise ValueError("Please enter a valid price.")
         self._customer= value
 
     @property
@@ -45,7 +45,7 @@ class Order:
     def coffee(self, value):
         from coffee import Coffee
         if not isinstance(value, Coffee):
-            raise Exception("coffee must be a Coffee instance")
+            raise ValueError("Please enter a valid price.")
         self._coffee = value    
 
 
