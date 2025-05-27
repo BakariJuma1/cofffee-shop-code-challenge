@@ -1,5 +1,4 @@
-# from .customer import Customer
-# from .coffee import Coffee
+
 class Order:
 
     # tracking all order instannces every new order is automatically added
@@ -33,7 +32,7 @@ class Order:
     
     @customer.setter
     def customer(self,value):
-        from .customer import Customer
+        from customer import Customer
         if not isinstance(value,Customer):
             raise Exception("Must be a coffee instance")
         self._customer= value
@@ -44,15 +43,15 @@ class Order:
 
     @coffee.setter
     def coffee(self, value):
-        from .coffee import Coffee
+        from coffee import Coffee
         if not isinstance(value, Coffee):
             raise Exception("coffee must be a Coffee instance")
         self._coffee = value    
 
 
 if __name__ == "__main__":
-    from .customer import Customer
-    from .coffee import Coffee
+    from customer import Customer
+    from coffee import Coffee
 
     customer = Customer('ALICE')
     coffee = Coffee('latte')
